@@ -30,7 +30,7 @@
 <link rel="preload" as="image" href="assets/hero-5.jpg">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Basmat Al Mawared Company Limited","alternateName":"بصمة الموارد","url":"https://www.basmatalmawared.com/","logo":"https://www.basmatalmawared.com/assets/logo.svg","image":"https://www.basmatalmawared.com/assets/og.jpg","email":"info@basmat-almawared.com","telephone":"+966569990576","address":{"@type":"PostalAddress","streetAddress":"As Salam","addressLocality":"Riyadh","postalCode":"14226","addressCountry":"SA"},"areaServed":"SA","sameAs":["https://www.basmatalmawared.com/"]}
+{"@context":"https://schema.org","@type":"Organization","name":"Basmat Al Mawared Company Limited","alternateName":"بصمة الموارد","url":"https://www.basmatalmawared.com/","logo":"https://www.basmatalmawared.com/assets/logo.svg","image":"https://www.basmatalmawared.com/assets/og.jpg","email":"info@basmat-almawared.com","telephone":"+966569990576","vatID":"310235524100003","identifier":[{"@type":"PropertyValue","name":"Commercial Registration","value":"1010649967"},{"@type":"PropertyValue","name":"Unified National Number","value":"7017773891"}],"address":{"@type":"PostalAddress","streetAddress":"As Salam","addressLocality":"Riyadh","postalCode":"14226","addressCountry":"SA"},"areaServed":"SA","sameAs":["https://www.basmatalmawared.com/"]}
 </script>
 <style>
 :root{
@@ -76,7 +76,7 @@ body{margin:0;font-family:var(--font);color:var(--ink);background:radial-gradien
 img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer}
-a.btn,.tab,.acc-btn,.svc-link,.footer ul a,.footer ul button{cursor:pointer}
+a.btn,.acc-btn,.svc-link,.footer ul a,.footer ul button{cursor:pointer}
 h1,h2,h3,h4{margin:0;line-height:1.2;font-weight:600;letter-spacing:-.02em}
 [dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3,[dir="rtl"] h4{letter-spacing:0;line-height:1.4}
 p{margin:0}
@@ -224,30 +224,16 @@ section{scroll-margin-top:calc(var(--header-h) + 16px)}
 .dark .eyebrow{color:var(--gold-300)}
 
 /* About */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:48px;align-items:stretch}
 .about-text p{color:var(--slate);font-size:17px;margin-top:18px}
 .about-text p.lead{color:var(--ink);font-size:19px;font-weight:500}
 .signature{display:flex;align-items:center;gap:16px;margin-top:36px;padding:20px;background:linear-gradient(90deg,#FFFcf6 0%,#F4EBD7 100%);border:1px solid var(--line);border-radius:var(--radius);border-inline-start:4px solid var(--gold)}
 .signature img{width:36px;height:43px}
 .signature b{display:block;font-size:15px}
-.signature small{color:var(--muted);font-size:13px}
-.tabs{background:linear-gradient(180deg,#FFFcf6 0%,#F8F3E8 100%);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden}
-.tablist{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line);background:var(--gold-50)}
-.tab{padding:18px 12px;border:0;background:transparent;font-weight:600;color:var(--slate);position:relative;transition:color .2s,background .2s;min-height:56px}
-.tab::after{content:"";position:absolute;inset-inline:0;bottom:-1px;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s var(--ease)}
-.tab[aria-selected="true"]{color:var(--ink);background:var(--paper)}
-.tab[aria-selected="true"]::after{transform:scaleX(1)}
-.tab:hover{color:var(--ink)}
-.tabpanel{padding:36px}
-.tabpanel[hidden]{display:none}
-.tabpanel.fade{animation:fadeIn .45s var(--ease)}
+.signature small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.about-photo{position:relative;align-self:stretch;min-height:420px;height:100%;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+.about-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:brightness(1.06) saturate(1.05)}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}}
-.tabpanel .q-icon{width:52px;height:52px;border-radius:14px;background:var(--gold-100);color:var(--gold-700);display:grid;place-items:center;margin-bottom:20px}
-.tabpanel p{font-size:18px;color:var(--ink-3);line-height:1.75}
-.values{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.value{padding:18px;border:1px solid var(--line);border-radius:var(--radius);display:flex;gap:12px;align-items:center;font-weight:600;transition:border-color .2s,background .2s}
-.value:hover{border-color:var(--gold-300);background:var(--gold-50)}
-.value i{font-style:normal;color:var(--gold);font-size:13px;font-weight:700;width:30px;height:30px;border-radius:50%;border:1px solid var(--gold-300);display:grid;place-items:center;flex:none}
 
 /* Services */
 .services{background:var(--gold-grad-soft);border-block:1px solid var(--line)}
@@ -381,6 +367,7 @@ textarea.input{min-height:130px;resize:vertical}
 .footer ul a,.footer ul button{color:#F3E8D2;background:none;border:0;padding:6px 0;font:inherit;text-align:start;transition:color .2s;min-height:44px;display:inline-flex;align-items:center}
 .footer ul a:hover,.footer ul button:hover{color:var(--gold-300)}
 .footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-block:26px;font-size:13.5px;color:#E2CFA0}
+.footer-regs{display:flex;flex-wrap:wrap;gap:8px 18px}
 
 /* Floating */
 .wa{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom,0px));inset-inline-end:calc(24px + env(safe-area-inset-end,0px));z-index:90;display:flex;align-items:center;flex-direction:row-reverse;gap:12px}
@@ -454,7 +441,8 @@ dialog[open]{animation:fadeIn .3s var(--ease)}
   .stat::before{inset-inline-start:20px}
   .svc-grid,.sec-grid,.comp-list,.values,.form-grid,.footer-grid,.trust-bar{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
-  .tabpanel,.form,.info{padding:28px 22px}
+   .form,.info{padding:28px 22px}
+   .about-photo{aspect-ratio:16/10;min-height:280px}
   .acc-btn{padding:18px 20px;font-size:16px}
   .acc-body p{padding:0 20px 20px}
   .wa{bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-end:calc(18px + env(safe-area-inset-end,0px))}
@@ -485,6 +473,8 @@ dialog[open]{animation:fadeIn .3s var(--ease)}
       <div class="topbar-set">
         <span data-i18n="topbar_company">Basmat Al Mawared Company Limited.</span><i class="sep" aria-hidden="true"></i>
         <span data-i18n="cr">CR No. 1010649967</span><i class="sep" aria-hidden="true"></i>
+        <span data-i18n="vat">VAT No. 310235524100003</span><i class="sep" aria-hidden="true"></i>
+        <span data-i18n="unified">Unified No. 7017773891</span><i class="sep" aria-hidden="true"></i>
         <a href="mailto:info@basmat-almawared.com">info@basmat-almawared.com</a><i class="sep" aria-hidden="true"></i>
         <a href="tel:+966569990576" dir="ltr">+966 56 999 0576</a><i class="sep" aria-hidden="true"></i>
         <span data-i18n="info_hours">Business Hours: Sunday – Thursday, 9:00 AM – 6:00 PM</span><i class="sep" aria-hidden="true"></i>
@@ -493,6 +483,8 @@ dialog[open]{animation:fadeIn .3s var(--ease)}
       <div class="topbar-set" aria-hidden="true">
         <span data-i18n="topbar_company">Basmat Al Mawared Company Limited.</span><i class="sep" aria-hidden="true"></i>
         <span data-i18n="cr">CR No. 1010649967</span><i class="sep" aria-hidden="true"></i>
+        <span data-i18n="vat">VAT No. 310235524100003</span><i class="sep" aria-hidden="true"></i>
+        <span data-i18n="unified">Unified No. 7017773891</span><i class="sep" aria-hidden="true"></i>
         <a href="mailto:info@basmat-almawared.com" tabindex="-1">info@basmat-almawared.com</a><i class="sep" aria-hidden="true"></i>
         <a href="tel:+966569990576" dir="ltr" tabindex="-1">+966 56 999 0576</a><i class="sep" aria-hidden="true"></i>
         <span data-i18n="info_hours">Business Hours: Sunday – Thursday, 9:00 AM – 6:00 PM</span><i class="sep" aria-hidden="true"></i>
@@ -669,31 +661,11 @@ dialog[open]{animation:fadeIn .3s var(--ease)}
         <p class="reveal d3" data-i18n="about_p2">Our name reflects our purpose — to leave a lasting imprint on the organizations we serve and the national talent we help develop.</p>
         <div class="signature reveal d4">
           <img src="assets/logo.svg" width="36" height="43" alt="" loading="lazy" decoding="async" data-i18n-alt="logo_alt">
-          <div><b data-i18n="brand">Basmat Al Mawared</b><small data-i18n="cr">CR No. 1010649967</small></div>
+          <div><b data-i18n="brand">Basmat Al Mawared</b><small data-i18n="cr">CR No. 1010649967</small><small data-i18n="vat">VAT No. 310235524100003</small><small data-i18n="unified">Unified No. 7017773891</small></div>
         </div>
       </div>
-      <div class="tabs reveal d2">
-        <div class="tablist" role="tablist" aria-label="Vision, mission and values" data-i18n-aria="tabs_aria">
-          <button class="tab" role="tab" id="tab-v" aria-controls="panel-v" aria-selected="true" tabindex="0" data-i18n="tab_vision">Vision</button>
-          <button class="tab" role="tab" id="tab-m" aria-controls="panel-m" aria-selected="false" tabindex="-1" data-i18n="tab_mission">Mission</button>
-          <button class="tab" role="tab" id="tab-c" aria-controls="panel-c" aria-selected="false" tabindex="-1" data-i18n="tab_values">Values</button>
-        </div>
-        <div class="tabpanel" role="tabpanel" id="panel-v" aria-labelledby="tab-v">
-          <div class="q-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
-          <p data-i18n="vision_text">To be the Kingdom's most trusted human resources partner, recognized for integrity, quality, and our contribution to a thriving national workforce.</p>
-        </div>
-        <div class="tabpanel" role="tabpanel" id="panel-m" aria-labelledby="tab-m" hidden>
-          <div class="q-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div>
-          <p data-i18n="mission_text">To deliver workforce solutions that meet the highest regulatory and ethical standards, empowering our clients to achieve their strategic goals while advancing Saudization and national talent development.</p>
-        </div>
-        <div class="tabpanel" role="tabpanel" id="panel-c" aria-labelledby="tab-c" hidden>
-          <div class="values">
-            <div class="value"><i data-n="1">01</i><span data-i18n="val1">Integrity</span></div>
-            <div class="value"><i data-n="2">02</i><span data-i18n="val2">Compliance</span></div>
-            <div class="value"><i data-n="3">03</i><span data-i18n="val3">Excellence</span></div>
-            <div class="value"><i data-n="4">04</i><span data-i18n="val4">Partnership</span></div>
-          </div>
-        </div>
+      <div class="about-photo reveal d2">
+        <img src="assets/hero-4.jpg" width="1600" height="900" alt="" loading="lazy" decoding="async" data-i18n-alt="about_img_alt">
       </div>
     </div>
   </section>
@@ -905,9 +877,9 @@ dialog[open]{animation:fadeIn .3s var(--ease)}
           <h3 data-i18n="info_title">Get in Touch</h3>
           <div class="info-item"><span class="ii"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><small data-i18n="info_address_l">Head Office</small><p data-i18n="info_address">As Salam, Riyadh 14226, Kingdom of Saudi Arabia</p><p class="nat-code" data-i18n="info_nat">National Address Short Code: RQSA4407</p></div></div>
           <div class="map-wrap">
-            <iframe title="Basmat Al Mawared head office map" data-i18n-title="map_title" src="https://www.openstreetmap.org/export/embed.html?bbox=46.72%2C24.68%2C46.82%2C24.76&amp;layer=mapnik&amp;marker=24.72%2C46.77" loading="lazy" referrerpolicy="no-referrer"></iframe>
+            <iframe title="Basmat Al Mawared head office map" data-i18n-title="map_title" src="https://www.openstreetmap.org/export/embed.html?bbox=46.768%2C24.657%2C46.868%2C24.737&amp;layer=mapnik&amp;marker=24.697138%2C46.818304" loading="lazy" referrerpolicy="no-referrer"></iframe>
           </div>
-          <a class="map-link" href="https://www.openstreetmap.org/?mlat=24.72&amp;mlon=46.77#map=14/24.72/46.77" target="_blank" rel="noopener noreferrer" data-i18n="map_open">Open map · As Salam, Riyadh</a>
+          <a class="map-link" href="https://maps.app.goo.gl/3gja7APkVEu7WGvc9" target="_blank" rel="noopener noreferrer" data-i18n="map_open">Open map · As Salam, Riyadh</a>
           <div class="info-item"><span class="ii"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><div><small data-i18n="info_phone_l">Phone</small><a href="tel:+966569990576" dir="ltr">+966 56 999 0576</a></div></div>
           <div class="info-item"><span class="ii"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><div><small data-i18n="info_email_l">Email</small><a href="mailto:info@basmat-almawared.com">info@basmat-almawared.com</a><a href="mailto:Muaz@basmat-almawared.com">Muaz@basmat-almawared.com</a></div></div>
           <div class="info-item"><span class="ii"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><small data-i18n="info_hours_l">Working Hours</small><p data-i18n="info_hours">Business Hours: Sunday – Thursday, 9:00 AM – 6:00 PM</p></div></div>
@@ -926,7 +898,7 @@ dialog[open]{animation:fadeIn .3s var(--ease)}
       </div>
       <div>
         <h4 data-i18n="footer_company">Company</h4>
-        <ul><li><a href="#about" data-i18n="nav_about">About Us</a></li><li><a href="#process" data-i18n="nav_process">Our Approach</a></li><li><a href="#compliance" data-i18n="nav_compliance">Compliance</a></li><li><a href="#faq" data-i18n="nav_faq">FAQ</a></li></ul>
+        <ul><li><a href="#about" data-i18n="nav_about">About Us</a></li><li><a href="#process" data-i18n="nav_process">Our Approach</a></li><li><a href="#compliance" data-i18n="nav_compliance">Compliance</a></li><li><a id="profileLink" href="assets/company-profile.pdf" download="Basmat-Al-Mawared-Company-Profile.pdf" data-i18n="footer_profile">Company Profile</a></li><li><a href="#faq" data-i18n="nav_faq">FAQ</a></li></ul>
       </div>
       <div>
         <h4 data-i18n="nav_services">Services</h4>
@@ -939,7 +911,7 @@ dialog[open]{animation:fadeIn .3s var(--ease)}
     </div>
     <div class="footer-bottom">
       <span>© <span id="year">2026</span> <span data-i18n="brand">Basmat Al Mawared</span>. <span data-i18n="rights">All rights reserved.</span></span>
-      <span data-i18n="cr">CR No. 1010649967</span>
+      <span class="footer-regs"><span data-i18n="cr">CR No. 1010649967</span><span data-i18n="vat">VAT No. 310235524100003</span><span data-i18n="unified">Unified No. 7017773891</span></span>
     </div>
   </div>
 </footer>
@@ -973,7 +945,7 @@ const T={
 en:{
 meta_title:"Basmat Al Mawared | Human Resources Solutions",
 meta_desc:"Basmat Al Mawared delivers fully compliant manpower, recruitment, and HR outsourcing solutions across the Kingdom of Saudi Arabia, aligned with Saudi Vision 2030.",
-skip:"Skip to content",logo_alt:"Basmat Al Mawared logo",nav_aria:"Primary navigation",tabs_aria:"Vision, mission and values",
+skip:"Skip to content",logo_alt:"Basmat Al Mawared logo",nav_aria:"Primary navigation",
 topbar_company:"Basmat Al Mawared Company Limited.",
 brand:"Basmat Al Mawared",brand_tag:"Human Resources Solutions",
 nav_about:"About Us",nav_services:"Services",nav_sectors:"Sectors",nav_process:"Our Approach",nav_compliance:"Compliance",nav_faq:"FAQ",nav_contact:"Contact",
@@ -1001,11 +973,9 @@ trust1:"MHRSD Licensed",trust2:"Qiwa Connected",trust2s:"Work permits & contract
 about_eyebrow:"About Us",about_title:"A Trusted Partner in Human Capital",
 about_p1:"Founded in Riyadh, Basmat Al Mawared is a Saudi human resources company built on a single principle: the right people, deployed the right way. We combine deep local market knowledge with rigorous governance to help organizations build capable, compliant, and future-ready teams.",
 about_p2:"Our name reflects our purpose — to leave a lasting imprint on the organizations we serve and the national talent we help develop.",
-cr:"CR No. 1010649967",
-tab_vision:"Vision",tab_mission:"Mission",tab_values:"Values",
-vision_text:"To be the Kingdom's most trusted human resources partner, recognized for integrity, quality, and our contribution to a thriving national workforce.",
-mission_text:"To deliver workforce solutions that meet the highest regulatory and ethical standards, empowering our clients to achieve their strategic goals while advancing Saudization and national talent development.",
-val1:"Integrity",val2:"Compliance",val3:"Excellence",val4:"Partnership",
+about_img_alt:"Basmat Al Mawared team in uniform with a Saudi operations manager",
+cr:"CR No. 1010649967",vat:"VAT No. 310235524100003",unified:"Unified No. 7017773891",
+
 services_eyebrow:"What We Do",services_title:"Comprehensive Workforce Solutions",services_sub:"End-to-end services designed around the regulatory framework of the Kingdom of Saudi Arabia.",
 s1_t:"Manpower Supply",s1_d:"Skilled, semi-skilled, and professional manpower on flexible contracts, fully managed under licensed sponsorship.",
 s2_t:"Recruitment & Executive Search",s2_d:"Targeted search for specialists and senior leaders, with structured assessment and thorough background verification.",
@@ -1050,8 +1020,8 @@ wa_form:"Hello Basmat Al Mawared,\nName: {name}\nOrganization: {company}\nEmail:
 info_title:"Get in Touch",info_address_l:"Head Office",info_address:"As Salam, Riyadh 14226, Kingdom of Saudi Arabia",info_nat:"National Address Short Code: RQSA4407",info_phone_l:"Phone",info_email_l:"Email",info_hours_l:"Working Hours",info_hours:"Business Hours: Sunday – Thursday, 9:00 AM – 6:00 PM",
 map_title:"Basmat Al Mawared head office map",map_open:"Open map · As Salam, Riyadh",
 footer_about:"A licensed Saudi human resources partner delivering compliant, high-quality workforce solutions across the Kingdom.",
-footer_company:"Company",footer_legal:"Legal",footer_privacy:"Privacy Policy",footer_terms:"Terms & Conditions",rights:"All rights reserved.",
-privacy_title:"Privacy Policy",privacy_text:"Basmat Al Mawared Company Limited (CR 1010649967) collects name, organization, email, mobile, and enquiry details only to respond to you, under the Saudi Personal Data Protection Law. Data is not sold. You may request access or deletion via info@basmat-almawared.com.",
+footer_company:"Company",footer_legal:"Legal",footer_profile:"Company Profile",footer_privacy:"Privacy Policy",footer_terms:"Terms & Conditions",rights:"All rights reserved.",
+privacy_title:"Privacy Policy",privacy_text:"Basmat Al Mawared Company Limited (CR 1010649967, VAT 310235524100003, Unified No. 7017773891) collects name, organization, email, mobile, and enquiry details only to respond to you, under the Saudi Personal Data Protection Law. Data is not sold. You may request access or deletion via info@basmat-almawared.com.",
 privacy_more:"Read the full Privacy Policy",
 terms_title:"Terms & Conditions",terms_text:"Use of this website is for information only and does not create a contract. Content is owned by Basmat Al Mawared. These terms are governed by the laws of the Kingdom of Saudi Arabia, with courts in Riyadh having jurisdiction.",
 terms_more:"Read the full Terms & Conditions",
@@ -1062,7 +1032,7 @@ close:"Close",wa_label:"Chat with us on WhatsApp",wa_msg:"Hello Basmat Al Maware
 ar:{
 meta_title:"بصمة الموارد | لحلول الموارد البشرية",
 meta_desc:"تقدّم بصمة الموارد حلولاً متوافقة بالكامل مع الأنظمة في توفير القوى العاملة والاستقطاب وإسناد خدمات الموارد البشرية في المملكة العربية السعودية، انسجاماً مع رؤية السعودية 2030.",
-skip:"انتقل إلى المحتوى",logo_alt:"شعار بصمة الموارد",nav_aria:"التنقل الرئيسي",tabs_aria:"الرؤية والرسالة والقيم",
+skip:"انتقل إلى المحتوى",logo_alt:"شعار بصمة الموارد",nav_aria:"التنقل الرئيسي",
 topbar_company:"شركة بصمة الموارد المحدودة.",
 brand:"بصمة الموارد",brand_tag:"لحلول الموارد البشرية",
 nav_about:"من نحن",nav_services:"خدماتنا",nav_sectors:"القطاعات",nav_process:"منهجيتنا",nav_compliance:"الامتثال",nav_faq:"الأسئلة الشائعة",nav_contact:"تواصل معنا",
@@ -1090,11 +1060,9 @@ trust1:"مرخّصة من الوزارة",trust2:"مرتبطة بمنصة قوى
 about_eyebrow:"من نحن",about_title:"شريك موثوق في رأس المال البشري",
 about_p1:"تأسست بصمة الموارد في الرياض كشركة سعودية متخصصة في الموارد البشرية، وتقوم على مبدأ واحد: الكفاءة المناسبة، بالطريقة الصحيحة. نجمع بين المعرفة العميقة بالسوق المحلي والحوكمة الصارمة لمساعدة الجهات على بناء فرق عمل مؤهلة ومتوافقة مع الأنظمة وجاهزة للمستقبل.",
 about_p2:"ويعكس اسمنا رسالتنا؛ أن نترك بصمة راسخة في الجهات التي نخدمها وفي الكفاءات الوطنية التي نسهم في تطويرها.",
-cr:"سجل تجاري رقم 1010649967",
-tab_vision:"رؤيتنا",tab_mission:"رسالتنا",tab_values:"قيمنا",
-vision_text:"أن نكون الشريك الأكثر موثوقية في مجال الموارد البشرية في المملكة، وأن نُعرف بالنزاهة والجودة وإسهامنا في بناء قوى عاملة وطنية مزدهرة.",
-mission_text:"تقديم حلول للقوى العاملة وفق أعلى المعايير التنظيمية والأخلاقية، بما يمكّن عملاءنا من تحقيق أهدافهم الاستراتيجية ويدعم التوطين وتنمية الكفاءات الوطنية.",
-val1:"النزاهة",val2:"الامتثال",val3:"التميّز",val4:"الشراكة",
+about_img_alt:"فريق بصمة الموارد بزي موحّد مع مدير عمليات سعودي",
+cr:"سجل تجاري رقم 1010649967",vat:"الرقم الضريبي 310235524100003",unified:"الرقم الوطني الموحد 7017773891",
+
 services_eyebrow:"ماذا نقدّم",services_title:"حلول متكاملة للقوى العاملة",services_sub:"خدمات شاملة مصمّمة وفق الإطار التنظيمي في المملكة العربية السعودية.",
 s1_t:"توفير القوى العاملة",s1_d:"توفير العمالة الماهرة وشبه الماهرة والمهنية بعقود مرنة، تُدار بالكامل تحت كفالة مرخّصة.",
 s2_t:"الاستقطاب والبحث عن القيادات",s2_d:"بحث متخصص عن الخبراء والقيادات العليا، مع تقييم منهجي وتحقق شامل من الخلفيات المهنية.",
@@ -1139,8 +1107,8 @@ wa_form:"مرحباً بصمة الموارد،\nالاسم: {name}\nالجهة:
 info_title:"ابقَ على تواصل",info_address_l:"المقر الرئيسي",info_address:"حي السلام، الرياض 14226، المملكة العربية السعودية",info_nat:"الرمز المختصر للعنوان الوطني: RQSA4407",info_phone_l:"الهاتف",info_email_l:"البريد الإلكتروني",info_hours_l:"ساعات العمل",info_hours:"ساعات العمل: الأحد – الخميس، 9:00 ص – 6:00 م",
 map_title:"خريطة المقر الرئيسي لبصمة الموارد",map_open:"افتح الخريطة · حي السلام، الرياض",
 footer_about:"شريك سعودي مرخّص في الموارد البشرية، يقدّم حلولاً للقوى العاملة عالية الجودة ومتوافقة مع الأنظمة في جميع أنحاء المملكة.",
-footer_company:"الشركة",footer_legal:"الشؤون القانونية",footer_privacy:"سياسة الخصوصية",footer_terms:"الشروط والأحكام",rights:"جميع الحقوق محفوظة.",
-privacy_title:"سياسة الخصوصية",privacy_text:"تجمع شركة بصمة الموارد المحدودة (سجل 1010649967) الاسم والجهة والبريد والجوال وتفاصيل الاستفسار للرد عليكم فقط، وفقاً لنظام حماية البيانات الشخصية. ولا تُباع البيانات. يمكنكم طلب الاطلاع أو الحذف عبر info@basmat-almawared.com.",
+footer_company:"الشركة",footer_legal:"الشؤون القانونية",footer_profile:"ملف الشركة",footer_privacy:"سياسة الخصوصية",footer_terms:"الشروط والأحكام",rights:"جميع الحقوق محفوظة.",
+privacy_title:"سياسة الخصوصية",privacy_text:"تجمع شركة بصمة الموارد المحدودة (سجل 1010649967، الرقم الضريبي 310235524100003، الرقم الوطني الموحد 7017773891) الاسم والجهة والبريد والجوال وتفاصيل الاستفسار للرد عليكم فقط، وفقاً لنظام حماية البيانات الشخصية. ولا تُباع البيانات. يمكنكم طلب الاطلاع أو الحذف عبر info@basmat-almawared.com.",
 privacy_more:"اقرأ سياسة الخصوصية كاملة",
 terms_title:"الشروط والأحكام",terms_text:"استخدام هذا الموقع لأغراض المعلومات فقط ولا يُنشئ عقداً. المحتويات مملوكة لبصمة الموارد. وتخضع هذه الشروط لأنظمة المملكة العربية السعودية، ويكون الاختصاص لمحاكم الرياض.",
 terms_more:"اقرأ الشروط والأحكام كاملة",
@@ -1187,7 +1155,7 @@ function applyLang(l){
   document.getElementById("dlgClose").setAttribute("aria-label",t("close"));
   document.getElementById("waBtn").href="https://wa.me/966569990576?text="+encodeURIComponent(t("wa_msg"));
   document.querySelectorAll(".step-num").forEach(el=>{el.textContent=pad2(+el.dataset.num)});
-  document.querySelectorAll(".value i,.svc-num,.sector-idx").forEach(el=>{el.textContent=pad2(+el.dataset.n)});
+  document.querySelectorAll(".svc-num,.sector-idx").forEach(el=>{el.textContent=pad2(+el.dataset.n)});
   document.getElementById("year").textContent=new Intl.NumberFormat(loc(),{useGrouping:false}).format(new Date().getFullYear());
   document.querySelectorAll(".count").forEach(el=>{if(el.dataset.done)el.textContent=nf().format(+el.dataset.target)});
   document.querySelectorAll(".field[data-err]").forEach(f=>{f.querySelector(".err").textContent=t(f.dataset.err)});
@@ -1245,9 +1213,7 @@ const cObs=new IntersectionObserver((entries,o)=>{entries.forEach(en=>{if(!en.is
 })},{threshold:.5});
 document.querySelectorAll(".count").forEach(el=>cObs.observe(el));
 
-const tabs=[...document.querySelectorAll(".tablist [role='tab']")];
-function selectTab(tab){tabs.forEach(tb=>{const on=tb===tab;tb.setAttribute("aria-selected",on);tb.tabIndex=on?0:-1;const p=document.getElementById(tb.getAttribute("aria-controls"));if(!p)return;p.hidden=!on;if(on){p.classList.remove("fade");void p.offsetWidth;p.classList.add("fade")}})}
-tabs.forEach((tb,i)=>{tb.addEventListener("click",()=>selectTab(tb));tb.addEventListener("keydown",e=>{let d=0;const rtl=html.dir==="rtl";if(e.key==="ArrowRight")d=rtl?-1:1;if(e.key==="ArrowLeft")d=rtl?1:-1;if(e.key==="Home"){e.preventDefault();tabs[0].focus();selectTab(tabs[0]);return}if(e.key==="End"){e.preventDefault();const l=tabs[tabs.length-1];l.focus();selectTab(l);return}if(d){e.preventDefault();const n=tabs[(i+d+tabs.length)%tabs.length];n.focus();selectTab(n)}})});
+
 
 document.querySelectorAll(".acc-btn").forEach(btn=>btn.addEventListener("click",()=>{const acc=btn.closest(".acc"),open=!acc.classList.contains("open");
   document.querySelectorAll(".acc").forEach(a=>{a.classList.remove("open");a.querySelector(".acc-btn").setAttribute("aria-expanded","false")});
